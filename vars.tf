@@ -1,5 +1,5 @@
-#variable "env_vars" {
-#}
+variable "env_vars" {
+}
 
 variable "env_vpc" {
   type = map
@@ -34,6 +34,24 @@ variable "iam_cluster_role" {
     dev     = "arn:aws:iam::861112368680:role/MyEKS-Role"
     pprod   = "arn:aws:iam::861112368680:role/MyEKS-Role"
     prod    = "arn:aws:iam::861112368680:role/MyEKS-Role"
+  }
+}
+
+variable "cluster_name" {
+  type = map
+  default = {
+    dev     = "dev"
+    pprod   = "pre-prod"
+    prod    = "prod"
+  }
+}
+
+variable "cluster_version" {
+  type = map
+  default = {
+    dev     = "dev"
+    pprod   = "pre-prod"
+    prod    = "prod"
   }
 }
 
