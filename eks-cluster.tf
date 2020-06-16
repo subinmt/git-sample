@@ -1,7 +1,7 @@
 data "aws_vpc" "eks_vpc" {
   filter {
     name = "tag:Environment"
-    values = var.env_vpc
+    values = var.env_vpc[var.env]
   }
 }
 
