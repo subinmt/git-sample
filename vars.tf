@@ -1,5 +1,5 @@
-variable "env_vars" {
-}
+#variable "env_vars" {
+#}
 
 variable "env_vpc" {
   type = map
