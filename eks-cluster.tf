@@ -16,11 +16,11 @@ data "aws_subnet" "subnet" {
 
 resource "aws_eks_cluster" "demo-cluster" {
   name     = var.cluster_name
-  role_arn = var.iam_cluster_role
+  role_arn = var.iam_cluster_role[var.env]
   version = var.cluster_version
 
   vpc_config {
-    security_group_ids = var.security_group_ids
+    security_group_ids = var.security_group_ids[var.env]
     subnet_ids = [for s in data.aws_subnet.subnet : s.id]
   }
 }
