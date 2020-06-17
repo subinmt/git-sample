@@ -15,9 +15,9 @@ data "aws_subnet" "subnet" {
 }
 
 resource "aws_eks_cluster" "demo-cluster" {
-  name     = "$Cluster_Name"
+  name     = var.cluster_name[var.cluster_name]
   role_arn = var.iam_cluster_role
-  version = "$EKS_Version"
+  version = var.cluster_version[var.cluster_version]
 
   vpc_config {
     security_group_ids = var.security_group_ids
