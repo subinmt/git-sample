@@ -1,9 +1,9 @@
 variable "env_vpc" {
-  type = map
+  type = map(string)
   default = {
-    dev     = "dev"
-    pprod   = "pre-prod"
-    prod    = "prod"
+    dev     = "dev",
+    pprod   = "pre-prod",
+    prod    = "prod",
   }
 }
 
