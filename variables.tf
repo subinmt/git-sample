@@ -1,6 +1,3 @@
-variable "env_vars" {
-}
-
 variable "env_vpc" {
   type = map
   default = {
@@ -38,6 +35,8 @@ variable "iam_cluster_role" {
 }
 
 variable "cluster_name" {
+  type = string
+  default = ""
 }
 
 variable "cluster_version" {
