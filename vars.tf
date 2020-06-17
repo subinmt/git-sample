@@ -38,11 +38,9 @@ variable "iam_cluster_role" {
 }
 
 variable "cluster_name" {
-  default = ""
 }
 
 variable "cluster_version" {
-  default = ""
 }
 
 #variable "aws_iam_instance_profile" {
