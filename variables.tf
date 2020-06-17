@@ -44,6 +44,11 @@ variable "cluster_version" {
   type = string
 }
 
+variable "env" {
+  default = ""
+  type = string
+}
+
 #variable "aws_iam_instance_profile" {
 #  type = map
 #  default = {
