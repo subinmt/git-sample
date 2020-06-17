@@ -38,21 +38,11 @@ variable "iam_cluster_role" {
 }
 
 variable "cluster_name" {
-  type = map
-  default = {
-    dev     = "dev"
-    pprod   = "pre-prod"
-    prod    = "prod"
-  }
+  default = ""
 }
 
 variable "cluster_version" {
-  type = map
-  default = {
-    dev     = "dev"
-    pprod   = "pre-prod"
-    prod    = "prod"
-  }
+  default = ""
 }
 
 #variable "aws_iam_instance_profile" {
