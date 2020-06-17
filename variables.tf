@@ -34,15 +34,15 @@ variable "iam_cluster_role" {
   }
 }
 
-#variable "cluster_name" {
-#  default = ""
-#  type = string
-#}
+variable "cluster_name" {
+  default = ""
+  type = string
+}
 
-#variable "cluster_version" {
-#  default = ""
-#  type = string
-#}
+variable "cluster_version" {
+  default = ""
+  type = string
+}
 
 #variable "aws_iam_instance_profile" {
 #  type = map
