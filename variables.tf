@@ -1,4 +1,4 @@
-variable "env" {}
+#variable "env" {}
 
 variable "env_vpc" {
   type = map(string)
