@@ -1,3 +1,5 @@
+variable "env" {}
+
 variable "env_vpc" {
   type = map(string)
   default = {
