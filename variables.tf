@@ -1,11 +1,11 @@
 #variable "env" {}
 
 variable "env_vpc" {
-  type = map(string)
+  type = map
   default = {
-    dev     = "dev",
-    pprod   = "pre-prod",
-    prod    = "prod",
+    "dev"     = "dev",
+    "pprod"   = "pre-prod",
+    "prod"    = "prod",
   }
 }
 
@@ -36,20 +36,20 @@ variable "iam_cluster_role" {
   }
 }
 
-variable "cluster_name" {
-  default = ""
-  type = string
-}
+#variable "cluster_name" {
+#  default = ""
+#  type = string
+#}
 
-variable "cluster_version" {
-  default = ""
-  type = string
-}
+#variable "cluster_version" {
+#  default = ""
+#  type = string
+#}
 
-variable "env" {
-  default = ""
-  type = string
-}
+#variable "env" {
+#  default = ""
+ # type = string
+#}
 
 #variable "aws_iam_instance_profile" {
 #  type = map
