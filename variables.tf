@@ -3,9 +3,9 @@ variable "env" {}
 variable "env_vpc" {
   type = map
   default = {
-    "dev"     = "dev",
-    "pprod"   = "pre-prod",
-    "prod"    = "prod",
+    dev     = "dev"
+    pprod   = "pre-prod"
+    prod    = "prod"
   }
 }
 
