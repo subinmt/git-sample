@@ -1,7 +1,7 @@
 variable "env" {}
 
 variable "env_vpc" {
-  type = map
+  type = map(map(string))
   default = {
     dev     = "dev"
     pprod   = "pre-prod"
