@@ -2,8 +2,8 @@ data "aws_vpc" "eks_vpc" {
   filter {
     name = "tag:Environment"
     #values = var.env_vpc[var.env]
-    #values = lookup(var.env_vpc, var.env)
-    values = var.env_vpc["${var.env}"]
+    values = lookup(var.env_vpc, var.env, null)
+    #values = var.env_vpc["${var.env}"]
   }
 }
 
