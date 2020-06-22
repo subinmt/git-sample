@@ -23,7 +23,7 @@ resource "aws_launch_configuration" "demo" {
   #iam_instance_profile = aws_iam_instance_profile.node.name
   iam_instance_profile = "arn:aws:iam::861112368680:instance-profile/eks-worker-node"
   image_id = data.aws_ami.eks-worker.id
-  instance_type = "t2.medium"
+  instance_type = [lookup(var.instance_type, var.env, null)]
   key_name = "singapore"
   name_prefix = "terraform-eks-demo"
   #security_groups = [aws_security_group.demo-node-wrkgrp.id]
@@ -35,10 +35,10 @@ resource "aws_launch_configuration" "demo" {
   }
 }
 resource "aws_autoscaling_group" "demo" {
-  desired_capacity = 2
+  desired_capacity = [lookup(var.asg_desired, var.env, null)] 
   launch_configuration = aws_launch_configuration.demo.id
-  max_size = 5
-  min_size = 2
+  max_size = [lookup(var.asg_max, var.env, null)]
+  min_size = [lookup(var.asg_min, var.env, null)]
   name = "terraform-eks-demo"
   #vpc_zone_identifier = module.vpc.public_subnets
   vpc_zone_identifier = [for s in data.aws_subnet.subnet : s.id]
