@@ -28,7 +28,7 @@ resource "aws_launch_configuration" "demo" {
   name_prefix = "terraform-eks-demo"
   #security_groups = [aws_security_group.demo-node-wrkgrp.id]
   #security_groups = var.security_group_ids
-  security_groups = var.sg_wrk_nodes_ids
+  security_groups = lookup(var.sg_wrk_nodes_ids, var.env, null)
   user_data_base64 = base64encode(local.demo-node-userdata)
   lifecycle {
     create_before_destroy = true
