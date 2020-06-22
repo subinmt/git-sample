@@ -46,6 +46,47 @@ variable "cluster_version" {
   type = string
 }
 
+#map from environment to the type of EC2 instance
+
+variable "instance_type" {
+  type = map(string)
+  default = {
+    dev  = "m5.xlarge"
+    preprod = "m5.xlarge"
+    prod  = "m5.xlarge"
+  }
+}
+
+
+# Autoscaling group node count for each environments
+
+variable "asg_desired" {
+  type = map(string)
+  default = {
+    dev     = "2"
+    pprod   = "4"
+    prod    = "3"
+  }
+}
+
+variable "asg_min" {
+  type = map(string)
+  default = {
+    dev     = "1"
+    pprod   = "2"
+    prod    = "1"
+  }
+}
+
+variable "asg_max" {
+  type = map(string)
+  default = {
+    dev     = "2"
+    pprod   = "9"
+    prod    = "4"
+  }
+}
+
 #variable "aws_iam_instance_profile" {
 #  type = map
 #  default = {
