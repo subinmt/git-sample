@@ -51,7 +51,7 @@ variable "cluster_version" {
 variable "instance_type" {
   type = map(string)
   default = {
-    dev  = "m5.xlarge"
+    dev  = "t2.micro"
     preprod = "m5.xlarge"
     prod  = "m5.xlarge"
   }
