@@ -96,11 +96,11 @@ variable "aws_iam_instance_profile" {
   }
 }
 
-#variable "iam_worker_role" {
-#  type = map(string)
-#  default = {
-#    dev     = "arn:aws:iam::861112368680:role/worker-nodes-role"
-#    pprod   = "arn:aws:iam::861112368680:role/worker-nodes-role"
-#    prod    = "arn:aws:iam::861112368680:role/worker-nodes-role"
-#  }
-#}
+variable "iam_worker_role" {
+  type = map(string)
+  default = {
+    dev     = "arn:aws:iam::861112368680:role/worker-nodes-role"
+    pprod   = "arn:aws:iam::861112368680:role/worker-nodes-role"
+    prod    = "arn:aws:iam::861112368680:role/worker-nodes-role"
+  }
+}
