@@ -21,7 +21,7 @@ USERDATA
 resource "aws_launch_configuration" "demo" {
   associate_public_ip_address = true
   #iam_instance_profile = aws_iam_instance_profile.node.name
-  iam_instance_profile = "arn:aws:iam::861112368680:instance-profile/eks-worker-node"
+  iam_instance_profile = lookup(var.aws_iam_instance_profile, var.env, null)
   image_id = data.aws_ami.eks-worker.id
   instance_type = lookup(var.instance_type, var.env, null)
   key_name = "singapore"
