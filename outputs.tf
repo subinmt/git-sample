@@ -44,7 +44,7 @@ metadata:
   namespace: kube-system
 data:
   mapRoles: |
-    - rolearn: lookup(var.iam_worker_role, var.env, null)
+    - rolearn: [lookup(var.iam_worker_role, var.env, null)]
       username: system:node:{{EC2PrivateDNSName}}
       groups:
         - system:bootstrappers
