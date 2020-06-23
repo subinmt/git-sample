@@ -87,17 +87,17 @@ variable "asg_max" {
   }
 }
 
-#variable "aws_iam_instance_profile" {
-#  type = map
-#  default = {
-#    dev     = "arn:aws:iam::861112368680:instance-profile/Ec2Admin-Bastion"
-#    pprod   = "arn:aws:iam::861112368680:instance-profile/Ec2Admin-Bastion"
-#    prod    = "arn:aws:iam::861112368680:instance-profile/Ec2Admin-Bastion"
-#  }
-#}
+variable "aws_iam_instance_profile" {
+  type = map(string)
+  default = {
+    dev     = "arn:aws:iam::861112368680:instance-profile/eks-worker-node"
+    pprod   = "arn:aws:iam::861112368680:instance-profile/eks-worker-node"
+    prod    = "arn:aws:iam::861112368680:instance-profile/eks-worker-node"
+  }
+}
 
 #variable "iam_worker_role" {
-#  type = map
+#  type = map(string)
 #  default = {
 #    dev     = "arn:aws:iam::861112368680:role/worker-nodes-role"
 #    pprod   = "arn:aws:iam::861112368680:role/worker-nodes-role"
