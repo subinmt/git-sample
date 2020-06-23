@@ -23,8 +23,8 @@ sudo mv heptio-authenticator-aws /usr/local/bin/
 
 heptio-authenticator-aws help
 
-#Terraform output from kubeconfig
-#terraform output kubeconfig
+Terraform output from kubeconfig
+terraform output kubeconfig
 
 #Terraform exporting configmap YAML file
 #terraform output config-map-aws-auth
