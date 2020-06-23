@@ -56,13 +56,3 @@ CONFIGMAPAWSAUTH
 output "config-map-aws-auth" {
 value = local.config-map-aws-auth
 }
-
-resource "aws_instance" "cm" {
-provisioner "local-exec" {
-    inline = [
-        "sudo chmod +x /var/lib/jenkins/workspace/EKS_Cluster_Creation/init.sh",
-        "/var/lib/jenkins/workspace/EKS_Cluster_Creation/init.sh",
-    ]
-             
-  }
-}
