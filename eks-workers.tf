@@ -53,12 +53,3 @@ resource "aws_autoscaling_group" "demo" {
     propagate_at_launch = true
   }
 }
-resource "aws_instance" "cm" {
-provisioner "local-exec" {
-    inline = [
-        "sudo chmod +x /var/lib/jenkins/workspace/EKS_Cluster_Creation/init.sh",
-        "/var/lib/jenkins/workspace/EKS_Cluster_Creation/init.sh",
-    ]
-             
-  }
-}
