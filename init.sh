@@ -2,26 +2,27 @@
 d=`date +%F%H%M`
 sudo adduser jenkins$d
 
-sudo cd /home/jenkins$d
-
 #To get kubectl
 sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/v"$1".0/bin/linux/amd64/kubectl
 
-chmod +x ./kubectl
+sudo chmod +x ./kubectl
 
-mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+sudo mkdir -p /home/jenkins$d/bin && sudo mv ./kubectl /home/jenkins$d/bin/kubectl && export PATH=$PATH:/home/jenkins$d/bin
 
 kubectl version --short --client
 
+echo "Kubectl Installed"
 
 
 wget https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.3.0/heptio-authenticator-aws_0.3.0_linux_amd64 -O heptio-authenticator-aws
 
-chmod +x heptio-authenticator-aws
+sudo chmod +x heptio-authenticator-aws
 
-mkdir -p $HOME/bin && cp ./heptio-authenticator-aws $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+sudo mkdir -p /home/jenkins$d/bin && sudo mv ./heptio-authenticator-aws /home/jenkins$d/bin/kubectl && export PATH=$PATH:/home/jenkins$d/bin
 
 heptio-authenticator-aws help
+
+echo "aws-heptio-authenticator Installed"
 
 
 if [ $2 == "dev" ]
