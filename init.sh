@@ -23,8 +23,24 @@ sudo mv heptio-authenticator-aws /usr/local/bin/
 
 heptio-authenticator-aws help
 
-Terraform output from kubeconfig
-terraform output kubeconfig
+
+if [[ "$Environments" == dev ]]
+then
+    echo "Dev"
+    sed -i 's|REPLACEME|arn:aws:iam::861112368680:role/worker-nodes-role|g' config-map-aws-auth.yaml
+ 
+elif [[ "$Environments" == pprod ]]
+then
+    echo "Preprod"
+    sed -i 's|REPLACEME|arn:aws:iam::861112368680:role/worker-nodes-role2|g' config-map-aws-auth.yaml
+
+else
+    echo "Prod"
+    sed -i 's|REPLACEME|arn:aws:iam::861112368680:role/worker-nodes-role3|g' config-map-aws-auth.yaml
+fi
+
+#Terraform output from kubeconfig
+#terraform output kubeconfig
 
 #Terraform exporting configmap YAML file
 #terraform output config-map-aws-auth
