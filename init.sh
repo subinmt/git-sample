@@ -24,12 +24,12 @@ sudo mv heptio-authenticator-aws /usr/local/bin/
 heptio-authenticator-aws help
 
 
-if [[ "$Environments" == dev ]]
+if [ $1 == "dev" ]
 then
     echo "Dev"
     sed -i 's|REPLACEME|arn:aws:iam::861112368680:role/worker-nodes-role|g' config-map-aws-auth.yaml
  
-elif [[ "$Environments" == pprod ]]
+elif [ $1 == "pprod" ]
 then
     echo "Preprod"
     sed -i 's|REPLACEME|arn:aws:iam::861112368680:role/worker-nodes-role2|g' config-map-aws-auth.yaml
