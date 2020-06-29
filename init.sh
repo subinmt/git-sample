@@ -7,9 +7,9 @@ sudo cd /home/jenkins$d
 #To get kubectl
 sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/v"$1".0/bin/linux/amd64/kubectl
 
-sudo chmod +x ./kubectl
+chmod +x ./kubectl
 
-sudo mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
 
 kubectl version --short --client
 
@@ -17,9 +17,9 @@ kubectl version --short --client
 
 wget https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.3.0/heptio-authenticator-aws_0.3.0_linux_amd64 -O heptio-authenticator-aws
 
-sudo chmod +x heptio-authenticator-aws
+chmod +x heptio-authenticator-aws
 
-sudo mkdir -p $HOME/bin && cp ./heptio-authenticator-aws $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+mkdir -p $HOME/bin && cp ./heptio-authenticator-aws $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
 
 heptio-authenticator-aws help
 
