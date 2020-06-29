@@ -1,5 +1,5 @@
 #!/bin/bash
-d=`date +%F`
+d=`date +%F%H%M`
 sudo adduser jenkins$d
 
 sudo cd /home/jenkins$d
