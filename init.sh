@@ -18,7 +18,7 @@ wget https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/
 
 sudo chmod +x heptio-authenticator-aws
 
-sudo mv ./heptio-authenticator-aws /home/jenkins$d/bin/kubectl && export PATH=$PATH:/home/jenkins$d/bin
+sudo mv ./heptio-authenticator-aws /home/jenkins$d/bin/heptio-authenticator-aws && export PATH=$PATH:/home/jenkins$d/bin
 
 heptio-authenticator-aws help
 
