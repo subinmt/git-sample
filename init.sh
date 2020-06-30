@@ -40,15 +40,11 @@ else
     sed -i 's|REPLACEME|arn:aws:iam::861112368680:role/worker-nodes-role3|g' config-map-aws-auth.yaml
 fi
 
-#Deploying config-map for join worker nodes.
-/home/jenkins$d/bin/kubectl create -f config-map-aws-auth.yaml
 
 #Terraform output from kubeconfig
 #terraform output kubeconfig
 
-#Terraform exporting configmap YAML file
-#terraform output config-map-aws-auth
+#terraform output kubeconfig > /home/jenkins$d/.kube/config
 
-#terraform output kubeconfig > ~/.kube/config
-#terraform output config-map-aws-auth > aws-auth.yaml
-#kubectl apply -f aws-auth.yaml
+#Deploying config-map for join worker nodes.
+#/home/jenkins$d/bin/kubectl create -f config-map-aws-auth.yaml
