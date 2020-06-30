@@ -44,7 +44,9 @@ fi
 #Terraform output from kubeconfig
 terraform output kubeconfig
 
-#terraform output kubeconfig > /home/jenkins$d/.kube/config
+sudo terraform output kubeconfig > /home/jenkins$d/.kube/config
+sudo chown -R jenkins$d.jenkins$d /home/jenkins$d/.kube/
 
 #Deploying config-map for join worker nodes.
-#/home/jenkins$d/bin/kubectl create -f config-map-aws-auth.yaml
+sudo mv config-map-aws-auth.yaml /home/jenkins$d/config-map-aws-auth.yaml
+/home/jenkins$d/bin/kubectl create -f config-map-aws-auth.yaml
