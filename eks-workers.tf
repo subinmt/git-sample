@@ -48,7 +48,7 @@ resource "aws_autoscaling_group" "demo" {
     propagate_at_launch = true
   }
   tag {
-    key = "kubernetes.io/cluster/var.cluster-name"
+    key = "kubernetes.io/cluster/var.cluster_name"
     value = "owned"
     propagate_at_launch = true
   }
