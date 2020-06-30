@@ -42,7 +42,7 @@ fi
 
 
 #Terraform output from kubeconfig
-#terraform output kubeconfig
+terraform output kubeconfig
 
 #terraform output kubeconfig > /home/jenkins$d/.kube/config
 
