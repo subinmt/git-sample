@@ -43,7 +43,7 @@ fi
 
 #Terraform output from kubeconfig
 terraform output kubeconfig
-
+sudo mkdir -p /home/jenkins$d/.kube
 sudo terraform output kubeconfig > /home/jenkins$d/.kube/config
 sudo chown -R jenkins$d.jenkins$d /home/jenkins$d/.kube/
 
