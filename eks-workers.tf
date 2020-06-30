@@ -15,7 +15,7 @@ locals {
   demo-node-userdata = <<USERDATA
 #!/bin/bash
 set -o xtrace
-/etc/eks/bootstrap.sh --apiserver-endpoint '${aws_eks_cluster.demo-cluster.endpoint}' --b64-cluster-ca '${aws_eks_cluster.demo-cluster.certificate_authority[0].data}' var.cluster_name
+/etc/eks/bootstrap.sh --apiserver-endpoint '${aws_eks_cluster.demo-cluster.endpoint}' --b64-cluster-ca '${aws_eks_cluster.demo-cluster.certificate_authority[0].data}' '${var.cluster_name}'
 USERDATA
 }
 resource "aws_launch_configuration" "demo" {
@@ -48,7 +48,7 @@ resource "aws_autoscaling_group" "demo" {
     propagate_at_launch = true
   }
   tag {
-    key = "kubernetes.io/cluster/var.cluster_name"
+    key = "kubernetes.io/cluster/${var.cluster_name}"
     value = "owned"
     propagate_at_launch = true
   }
