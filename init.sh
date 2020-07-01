@@ -49,4 +49,4 @@ sudo mv config-1 /home/jenkins$d/.kube/config && sudo chown -R jenkins$d.jenkins
 
 #Deploying config-map for join worker nodes.
 sudo mv config-map-aws-auth.yaml /home/jenkins$d/config-map-aws-auth.yaml
-/home/jenkins$d/bin/kubectl create -f config-map-aws-auth.yaml
+sudo -H -u jenkins$d bash -c /home/jenkins$d/bin/kubectl create -f /home/jenkins$d/config-map-aws-auth.yaml
