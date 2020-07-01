@@ -20,6 +20,8 @@ sudo chmod +x heptio-authenticator-aws
 
 sudo mv ./heptio-authenticator-aws /home/jenkins$d/bin/heptio-authenticator-aws && export PATH=$PATH:/home/jenkins$d/bin
 
+sudo chown -R jenkins$d.jenkins$d /home/jenkins$d/bin/
+
 heptio-authenticator-aws help
 
 echo "aws-heptio-authenticator Installed"
