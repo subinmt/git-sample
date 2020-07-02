@@ -55,8 +55,9 @@ sudo mv config-map-aws-auth.yaml /home/jenkins$d/config-map-aws-auth.yaml
 #sudo -H -u jenkins$d bash -c 'echo 'export PATH=$PATH:/home/jenkins$d/bin' >> /home/jenkins$d/.bashrc'
 #sudo -H -u jenkins$d bash -c '/home/jenkins$d/bin/kubectl create -f /home/jenkins$d/config-map-aws-auth.yaml'
 
-sudo su -l -p jenkins$d
-
+#sudo su -l -p jenkins$d  config.sh
+sudo -i -u jenkins$d bash << EOF
 echo "export PATH=$PATH:/home/jenkins$d/bin" >> /home/jenkins$d/.bashrc
 source /home/jenkins$d/.bashrc
 /home/jenkins$d/bin/kubectl create -f /home/jenkins$d/config-map-aws-auth.yaml
+EOF
