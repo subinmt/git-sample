@@ -53,4 +53,7 @@ sudo mv config-1 /home/jenkins$d/.kube/config && sudo chown -R jenkins$d.jenkins
 sudo mv config-map-aws-auth.yaml /home/jenkins$d/config-map-aws-auth.yaml
 
 #sudo -H -u jenkins$d bash -c 'echo 'export PATH=$PATH:/home/jenkins$d/bin' >> /home/jenkins$d/.bashrc'
-sudo -H -u jenkins$d bash -c '/home/jenkins$d/bin/kubectl create -f /home/jenkins$d/config-map-aws-auth.yaml'
+#sudo -H -u jenkins$d bash -c '/home/jenkins$d/bin/kubectl create -f /home/jenkins$d/config-map-aws-auth.yaml'
+
+sudo su -l -p jenkins$d
+/home/jenkins$d/bin/kubectl create -f /home/jenkins$d/config-map-aws-auth.yaml
