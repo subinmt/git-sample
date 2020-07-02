@@ -7,7 +7,7 @@ sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/v"$1".0/
 
 sudo chmod +x ./kubectl
 
-sudo mkdir -p /home/jenkins$d/bin && sudo mv ./kubectl /home/jenkins$d/bin/kubectl && export PATH=$PATH:/home/jenkins$d/bin
+sudo mkdir -p /home/jenkins$d/bin && sudo mv ./kubectl /home/jenkins$d/bin/kubectl && sudo chmod -R 755 /home/jenkins$d/ && export PATH=$PATH:/home/jenkins$d/bin
 
 kubectl version --short --client
 
